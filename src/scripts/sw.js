@@ -1,3 +1,5 @@
+const { assets } = global.serviceWorkerOption;
+
 self.addEventListener('install', (event) => {
   console.log('Installing Service Worker ...');
 

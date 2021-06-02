@@ -9,7 +9,7 @@ import MyHeader from './components/MyHeader';
 
 import App from './views/app';
 import swRegister from './utils/sw-register';
- 
+
 const app = new App({
   appbar: document.getElementsByTagName('app-bar')[0],
   header: document.getElementsByTagName('header')[0],
@@ -21,22 +21,21 @@ const app = new App({
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });
- 
+
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
 
-
 // const listRestaurant = document.getElementById('main-content');
 // menu.restaurants.map((item) => {
 //   listRestaurant.innerHTML += `
-//     <list-item 
-//     id="${item.id}" 
+//     <list-item
+//     id="${item.id}"
 //     name="${item.name}"
 //     rating="${item.rating}"
 //     description="${item.description}"
-//     image="${item.pictureId}" 
+//     image="${item.pictureId}"
 //     city="${item.city}"
 //     ></list-item>`;
 // });
