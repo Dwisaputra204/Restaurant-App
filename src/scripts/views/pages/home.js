@@ -4,7 +4,9 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Home = {
   async render() {
     return `
-        <main id="main-content"></main>
+    <div id="home">
+      <main id="main-content"></main>
+    </div>
       `;
   },
 
