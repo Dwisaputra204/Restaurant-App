@@ -242,6 +242,7 @@ nav {
 
 /* restaurant */
 #restaurant {
+  width: 70%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -250,6 +251,7 @@ nav {
 }
 
 #restaurant .restaurant_name {
+  font-size: 18px;
   color: var(--font-color);
 }
 
@@ -258,6 +260,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: 0 20px;
+}
+
+#restaurant .restaurant_header p {
+  font-size: 12px;
 }
 
 #restaurant .chips {
@@ -286,17 +292,22 @@ nav {
   margin: 5px;
 }
 
-#restaurant .restaurant_menu {
+#restaurant .restaurant_information {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   margin: 20px;
 }
 
-#restaurant .restaurant_overview-container {
-  overflow: scroll;
-  height: 500px;
+#restaurant .restaurant_information .restaurant_menu {
+  flex: 1;
 }
+
+#restaurant .restaurant_information .restaurant_overview-container {
+  flex: 3;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
 #restaurant .restaurant_overview {
   border: 1px solid #eaeaea;
   padding: 5px;

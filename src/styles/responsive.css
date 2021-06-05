@@ -13,6 +13,24 @@
   .nav-item {
     display: none;
   }
+  #restaurant {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #restaurant .restaurant_information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #restaurant .restaurant_header {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

@@ -16,7 +16,6 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <img src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant_information">
     <div class="restaurant_menu">
-    <div>
       ${restaurant.menus.foods.map((food) => `<p class="chips food">🍔${food.name}</p>`).join('')}
       ${restaurant.menus.drinks.map((drink) => `<p class="chips drink">🍹${drink.name}</p>`).join('')}
     </div>
@@ -28,7 +27,6 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <p>${customerReview.review}</p>
       </div>
       `).join('')}
-    </div>
     </div>
   </div>
   </figure>
