@@ -6,29 +6,29 @@ class App {
   constructor({
     appbar, header, button, drawer, content,
   }) {
-    this._appbar = appbar;
-    this._header = header;
-    this._button = button;
-    this._drawer = drawer;
-    this._content = content;
+    this.appbar = appbar;
+    this.header = header;
+    this.button = button;
+    this.drawer = drawer;
+    this.content = content;
 
-    this._initialAppShell();
+    this.initialAppShell();
   }
 
-  _initialAppShell() {
+  initialAppShell() {
     DrawerInitiator.init({
-      appbar: this._appbar,
-      header: this._header,
-      button: this._button,
-      drawer: this._drawer,
-      content: this._content,
+      appbar: this.appbar,
+      header: this.header,
+      button: this.button,
+      drawer: this.drawer,
+      content: this.content,
     });
   }
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innerHTML = await page.render();
+    this.content.innerHTML = await page.render();
     await page.afterRender();
   }
 }

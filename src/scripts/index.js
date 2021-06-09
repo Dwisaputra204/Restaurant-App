@@ -1,11 +1,10 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
 import '../styles/responsive.css';
-import menu from '../DATA.json';
-import AppBar from './components/AppBar';
-import ListItem from './components/ListItem';
-import MyFooter from './components/MyFooter';
-import MyHeader from './components/MyHeader';
+import './components/AppBar';
+import './components/ListItem';
+import './components/MyFooter';
+import './components/MyHeader';
 
 import App from './views/app';
 import swRegister from './utils/sw-register';
@@ -26,16 +25,3 @@ window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
-
-// const listRestaurant = document.getElementById('main-content');
-// menu.restaurants.map((item) => {
-//   listRestaurant.innerHTML += `
-//     <list-item
-//     id="${item.id}"
-//     name="${item.name}"
-//     rating="${item.rating}"
-//     description="${item.description}"
-//     image="${item.pictureId}"
-//     city="${item.city}"
-//     ></list-item>`;
-// });
