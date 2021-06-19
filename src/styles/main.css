@@ -259,7 +259,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 20px;
+  margin: 5px 20px;
 }
 
 #restaurant .restaurant_header p {
@@ -401,9 +401,9 @@ footer {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  background-color: #db0000;
+  background-color: white;
   color: white;
-  border: 0;
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   width: 55px;
   height: 55px;
@@ -411,4 +411,5 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
 }
