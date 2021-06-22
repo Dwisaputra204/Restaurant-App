@@ -1,5 +1,5 @@
 import FavoriteRestaurantIdb from '../src/scripts/data/favouriterestaurant-idb';
-import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
+import * as TestFactories from './helpers/testFactories';
 /* eslint-disable no-undef */
 
 describe('unliking a restaurant', () => {
@@ -17,36 +17,29 @@ describe('unliking a restaurant', () => {
   });
 
   it('should display unlike widget when the restaurant has been liked', async () => {
-    await LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="unlike this restaurant"]'))
       .toBeTruthy();
   });
 
   it('should not display like widget when the restaurant has been liked', async () => {
-    await LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="like this restaurant"]'))
       .toBeFalsy();
   });
 
+  it('should be able to remove liked restaurant from the list', async () => {
+    await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
+
+    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
+
+    expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
+  });
+
   it('should not throw error if the unliked restaurant is not in the list', async () => {
-    await LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
     await FavoriteRestaurantIdb.deleteRestaurant(1);
 
     document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
