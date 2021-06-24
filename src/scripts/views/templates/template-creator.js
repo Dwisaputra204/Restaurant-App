@@ -13,7 +13,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
       ${restaurant.categories.map((category) => `<span class="chips category">${category.name}</span>`).join('')}
     </div>
   </div>
-  <img src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.title}" />
+  <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant_information">
     <div class="restaurant_menu">
       ${restaurant.menus.foods.map((food) => `<p class="chips food">🍔${food.name}</p>`).join('')}
@@ -34,7 +34,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createRestaurantItemTemplate = (restaurant) => `
         <figure>
-        <img src="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}"
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}"
             alt="${restaurant.name}">
         <div class="content">
             <div class="content-head">
