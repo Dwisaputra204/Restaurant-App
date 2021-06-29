@@ -36,6 +36,16 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     margin: 0 5px;
   }
+  #restaurant .restaurant_header {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 5px 20px;
+  }
+
+  #restaurant .restaurant_header div {
+    margin-bottom: 10px;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
